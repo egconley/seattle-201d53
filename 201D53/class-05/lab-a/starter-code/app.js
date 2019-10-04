@@ -76,7 +76,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
-
+/* blah blah blah */
 function sumArray(sumArr) { //eslint-disable-line
 
 }
