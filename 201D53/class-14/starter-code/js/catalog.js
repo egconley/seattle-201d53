@@ -45,11 +45,16 @@ function handleSubmit(event) {
 function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   var selectedItem = Product.allProducts[dropDown.selectedIndex].name;
-  console.log(selectedItem);
+  // console.log(selectedItem);
   // TODO: get the quantity
   var selectedQuantity = Number(quantityBox.value);
   console.log(selectedQuantity);
   // TODO: using those, add one item to the Cart
+    CartItem.product = selectedItem;
+    CartItem.quantity = selectedQuantity;
+    // console.log(CartItem.product, CartItem.quantity);
+    // console.log('Cart.items: ', Cart);
+    new Cart(CartItem);
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart

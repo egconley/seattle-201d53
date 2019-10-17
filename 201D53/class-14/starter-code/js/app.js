@@ -4,7 +4,9 @@
 var Cart = function(items) {
   // this.items is an array of CartItem instances.
   this.items = items;
+  Cart.allItems.push(this);
 };
+Cart.allItems = [];
 
 Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.
