@@ -33,12 +33,15 @@ quantityBox.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
 
+
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
   updateCounter();
   updateCartPreview();
-
+  var allCartItemsString = JSON.stringify();
+  // console.log(allCartItemsString);
+  localStorage.setItem('Cart Data', allCartItemsString);
 }
 
 // TODO: Add the selected item and quantity to the cart
@@ -50,11 +53,11 @@ function addSelectedItemToCart() {
   var selectedQuantity = Number(quantityBox.value);
   console.log(selectedQuantity);
   // TODO: using those, add one item to the Cart
-    CartItem.product = selectedItem;
-    CartItem.quantity = selectedQuantity;
-    // console.log(CartItem.product, CartItem.quantity);
-    // console.log('Cart.items: ', Cart);
-    new Cart(CartItem);
+  CartItem.product = selectedItem;
+  CartItem.quantity = selectedQuantity;
+  // console.log(CartItem.product, CartItem.quantity);
+  // console.log('Cart.items: ', Cart);
+  cart.addItem(CartItem);
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
